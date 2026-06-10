@@ -20,12 +20,14 @@ DOCKER_OPTS+="--device=/dev/davinci_manager --device=/dev/devmm_svm --device=/de
 
 # 挂载 驱动、固件及数据
 DOCKER_OPTS+="-v /etc/ascend_install.info:/etc/ascend_install.info "
-DOCKER_OPTS+="-v /usr/local/Ascend/:/usr/local/Ascend/ "
 DOCKER_OPTS+="-v /usr/local/Ascend/driver:/usr/local/Ascend/driver "
 DOCKER_OPTS+="-v /usr/local/Ascend/add-ons/:/usr/local/Ascend/add-ons/ "
 DOCKER_OPTS+="-v /usr/local/sbin/npu-smi:/usr/local/sbin/npu-smi "
 DOCKER_OPTS+="-v /usr/local/sbin/:/usr/local/sbin/ "
 DOCKER_OPTS+="-v ${DATA_PATH}:${DATA_PATH} "
+
+# DOCKER_OPTS+="-v /usr/local/Ascend/:/usr/local/Ascend/ "
+
 
 # 执行
 echo "正在启动容器: ${CONTAINER_NAME} ..."
